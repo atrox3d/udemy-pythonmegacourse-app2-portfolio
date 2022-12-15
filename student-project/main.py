@@ -20,8 +20,7 @@ df = pd.read_csv("data.csv")
 
 col1, _, col2, _, col3 = st.columns([1.5, 0.5, 1.5, 0.5, 1.5])
 ar = ArrayRepeater([col1, col2, col3])
-for irow, col in zip(df.iterrows(), ar):
-    index, row = irow
+for (index, row), col in zip(df.iterrows(), ar):
     firstname = row["first name"]
     lastname = row["last name"]
     role = row["role"]
